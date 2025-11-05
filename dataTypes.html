@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>How Far</h1>
+</body>
+</html>
+<script>
+    // Primitive Data Type
+    // Datas that are not modifiable
+    // String
+    let thisClass = 'Javascript'
+    console.log(thisClass);
+    console.log(thisClass[1]);
+    thisClass[0] = 'T'
+    console.log(thisClass);
+    // Non Primitive Data Type
+    // Datas that are modifiable
+    // Array
+    let arr = ['Javascript', 'Laravel', 'React', 'Node']
+    console.log(arr);
+    console.log(arr[1]);
+    arr[0] = 'Typescript'
+    console.log(arr);
+
+    // Primitive Datas
+    // String
+    // Number
+    // Undefined
+    // Null
+    // Boolean
+
+    // Non Primitive
+    // Arrays 
+    // Objects
+
+    // String
+    // ''""``
+    let newString = new String()
+    newString = 'Hello'
+    let myString = "How Far My Guy, can't come to class"
+    let myString1 = 'How Far My Guy, bring these stuffs, "rice", "beans"'
+    let myString2 = `How Far My Guy`
+
+    console.log(newString);
+    console.log(myString);
+    console.log(myString1);
+    console.log(myString2);
+
+    // String Methods
+    // length
+    console.log(myString.length);
+
+    // Accessing the lasrt Character in a string 
+    console.log(newString[newString.length - 1]);
+
+    // Includes
+    let helloString = 'Hello, DoTun'
+    console.log(helloString.toLowerCase().includes('dotun'));
+
+    // Lower Case & Upper Case
+    let sent = 'how are you guys'
+    console.log(sent.toUpperCase());
+    
+    let sentNew = 'HOW ARE YOU GUYS DOING'
+    console.log(sentNew.toLowerCase());
+    
+    // Trim
+    let sentence = '         How far my guy               '
+    console.log(sentence.trim());
+
+    // Concat
+    let firstName = 'Adedeji'
+    let lastName = 'Adedotun'
+    console.log(firstName.concat(' ' ,lastName, ' ','Anthony')); 
+    console.log(firstName + ' ' + lastName + ' ' + 'Anthony');
+
+    // Startswith & EndsWith
+    let startEx = ' Hey there'
+    console.log(startEx.trim().startsWith('Hey there'));
+
+    let endsEx = 'How far my guy'
+    console.log(endsEx.endsWith('How far my guy'));
+
+    // Slice
+    let sliceEx = 'How are you doing?'
+    console.log(sliceEx.slice(12));
+
+    // replace
+    let replaceEx = 'Javascript is fun'
+    console.log(replaceEx.replace('Javascript', 'Typescript'));
+    console.log(replaceEx);
+
+    let newSentence = 'what the heck is going on nigga, this nigga is messing with me'
+    console.log(newSentence.replace('heck', 'h**k').replace('nigga', 'n***a'));
+    console.log(newSentence.replace(newSentence[0], newSentence[0].toUpperCase()));
+
+
+    // replaceAll
+    console.log(newSentence.replaceAll('heck', 'h**k').replaceAll('nigga', 'n***a'));
+    
+
+
+    
+    
+
+
+    
+    
+    
+    
+    
+    
+    
+</script>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="introduction.css">
+    <!-- <script src="introduction.js" defer></script> -->
+    <style>
+        .divFromDom {
+            height: 100px;
+        }
+
+        #blackSection {
+            width: 100dvw;
+            height: 100dvh;
+            background-color: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+
+        #content {
+            width: 30%;
+            aspect-ratio: 1 / 1;
+            background-color: blueviolet;
+            border-radius: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <button onclick="showModal()">Show Modal</button>
+    <div style="width: auto;" class="divFromDom"></div>
+    <div id="sendText" class="check"></div>
+    <h1 id="greetUser"></h1>
+
+    <div id="sendDesign">
+
+    </div>
+
+    <section id="blackSection">
+        <div id="content">
+            <button onclick="cancelModal()">Cancel Modal</button>
+        </div>
+    </section>
+</body>
+
+</html>
+
+<script>
+    const blackSection = document.getElementById('blackSection')
+    function showModal() {
+        blackSection.style.display = 'flex'
+    }
+    function cancelModal() {
+        blackSection.style.display = 'none'
+    }
+    // let divFromDom = document.querySelector('.divFromDom')
+    console.log('Welcome to Javascript, it is going to be a fun ride');
+    let welcome = 'Welcome to Javascript, it is going to be a fun ride'
+    console.log(welcome);
+
+    // let const var
+    let currentClass = 'Javascript Class'
+    console.log(currentClass);
+
+    currentClass = 'React Class'
+    console.log(currentClass);
+
+    var nextClass = 'React Class'
+    console.log(nextClass);
+
+    nextClass = 'Next Js Class'
+    console.log(nextClass);
+
+    const boilingPoint = '100deg/cel'
+    console.log(boilingPoint);
+
+    const sendToBody = document.getElementById('sendText')
+
+    console.log(sendToBody);
+
+    sendToBody.style.width = '100px'
+    sendToBody.style.height = '100px'
+    sendToBody.style.backgroundColor = 'rgb(180,180,180)'
+    sendToBody.style.borderRadius = '10px'
+
+    // innerHTML, innerText, textContent
+    const greetUser = document.getElementById('greetUser')
+    greetUser.innerHTML = 'Welcome Tolu'
+    console.log(greetUser);
+
+    const sendDesign = document.getElementById('sendDesign')
+    sendDesign.innerHTML = `
+        <section>
+            <h1>
+                <a href="">How are you doing?</a>
+            </h1>
+        </section>
+    `
+
+    console.log(sendDesign);
+
+
+</script>
