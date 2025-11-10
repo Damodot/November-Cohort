@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Word Sensor</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <div class="container py-5">
+    <h3 class="text-center mb-4">Simple Word Sensor</h3>
+
+    <div class="mb-3">
+      <label for="textInput" class="form-label">Enter Text:</label>
+      <textarea id="textInput" class="form-control" rows="5" placeholder="Type something..."></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="badWord" class="form-label">Word to Censor:</label>
+      <input id="badWord" type="text" class="form-control" placeholder="Enter a word to censor">
+    </div>
+
+    <button id="censorBtn" class="btn btn-primary w-100">Censor Text</button>
+
+    <div class="mt-4">
+      <h5>Censored Output:</h5>
+      <div id="output" class="p-3 border bg-white rounded" style="min-height:100px"></div>
+    </div>
+  </div>
+
+  <script>
+    const button = document.getElementById("censorBtn");
+    const input = document.getElementById("textInput");
+    const output = document.getElementById("output");
+    const badWord = document.getElementById("badWord");
+
+    button.addEventListener("click", () => {
+      const text = input.value;
+      const word = badWord.value.trim();
+
+      if (!word) {
+        output.textContent = "⚠️ Please enter a word to censor.";
+        return;
+      }
+
+      // Replace all occurrences of the bad word (case-sensitive)
+      const censoredText = text.replaceAll(word, "*****");
+      output.textContent = censoredText;
+    });
+  </script>
+
+</body>
+</html>

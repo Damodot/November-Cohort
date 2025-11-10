@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
 </head>
+
 <body>
-    <h1>How Far</h1>
+    <h1 id="h1Tag"></h1>
+    <section></section>
+    <div></div>
+    <input type="text" id="inputTag">
+    <button onclick="showInputValue()">Click Me</button>
+    <img src="" alt="">
 </body>
+
 </html>
 <script>
     // Primitive Data Type
@@ -65,10 +74,10 @@
     // Lower Case & Upper Case
     let sent = 'how are you guys'
     console.log(sent.toUpperCase());
-    
+
     let sentNew = 'HOW ARE YOU GUYS DOING'
     console.log(sentNew.toLowerCase());
-    
+
     // Trim
     let sentence = '         How far my guy               '
     console.log(sentence.trim());
@@ -76,7 +85,7 @@
     // Concat
     let firstName = 'Adedeji'
     let lastName = 'Adedotun'
-    console.log(firstName.concat(' ' ,lastName, ' ','Anthony')); 
+    console.log(firstName.concat(' ', lastName, ' ', 'Anthony'));
     console.log(firstName + ' ' + lastName + ' ' + 'Anthony');
 
     // Startswith & EndsWith
@@ -99,21 +108,68 @@
     console.log(newSentence.replace('heck', 'h**k').replace('nigga', 'n***a'));
     console.log(newSentence.replace(newSentence[0], newSentence[0].toUpperCase()));
 
-
     // replaceAll
     console.log(newSentence.replaceAll('heck', 'h**k').replaceAll('nigga', 'n***a'));
-    
+
+    // Interpolation
+    let name = 'Faruq'
+    console.log(`My name is ${name}`);
+
+    console.log(name);
+    console.log('name');
+
+    let a = 10
+    let b = 20
+
+    console.log(`The value of ${a} and ${b} is equals too ${a + b}`);
+
+    // Assign your name to a variable
+    // Create a sentence and use your name in the sentence
+    // Send it into the innerHTML of an HTML element
+
+    let myName = 'Adedeji Adedotun'
+    let latestSentence = `My name is ${myName}`
+
+    console.log(latestSentence);
+    const h1Tag = document.getElementById('h1Tag')
+    h1Tag.innerHTML = latestSentence
+    console.log(h1Tag);
+
+    // split
+    let newSent = 'How are you guys doing?'
+    console.log(newSent.split(''));
+
+    let a1 = 10
+
+    console.log(typeof newSent);
+    console.log(typeof a1);
+
+    let inputTag = document.getElementById('inputTag')
+    console.log(inputTag);
+    function showInputValue() {
+        console.log(inputTag.value);
+        // Create an html element that has the innerHTML attribute
+        // Grab the element in Javascript
+        // send the inputTag.value into the innerHTML of the HTML Element
+    }
 
 
-    
-    
 
 
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </script>
