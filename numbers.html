@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <input type="text" id="inp1">
     <input type="text" id="inp2">
     <button onclick="addNumber()">Add</button>
 </body>
+
 </html>
 <script>
     // Number 
@@ -24,7 +27,7 @@
 
     let b = '10.856'
     let c = '25.412'
-    
+
     console.log(parseInt(b) + parseInt(c));
     console.log(parseFloat(b) + parseFloat(c));
 
@@ -34,6 +37,71 @@
         // inp1 = '13'
         console.log(parseFloat(inp1.value) + parseFloat(inp2.value));
     }
+
+    // Number
+    let d = '23.9171'
+    console.log(Number(d));
+
+    // +
+    let f = '52.8764'
+    console.log(+f + 45);
+
+    // Math Max
+    console.log(Math.max(3, 5, 2, 6, 8, 1, 9, 3, 4, 5, 6));
+
+    // Math min
+    console.log(Math.min(6, 3, 4, 6, 7, 8, 9, 1, 0, 3, 2, 2));
+
+    // Math round 
+    console.log(Math.round(10.6));
+    console.log(Math.round(10.4));
+
+    // Math floor
+    console.log(Math.floor(10.9999));
+    console.log(Math.floor(10.11111));
+
+    // Math ceil
+    console.log(Math.ceil(10.0001));
+    console.log(Math.ceil(10.09999));
+    
+    // Math random
+    console.log(Math.floor(Math.random() * 11));
+    // 0.001 * 11 = 0.0121 = 0
+    // 0.999 * 11 = 10.989 = 10
+    console.log(Math.ceil(Math.random() * 11));
+    // 0.001 * 11 = 0.012 = 1
+    // 0.999 * 11 = 10.989 = 11
+    console.log(Math.round(Math.random() * 11)); 
+    // 0.9999 * 11 = 10.98988 = 11
+    // 0.0001 * 11 = 0.012 = 0
+    console.log(Math.ceil(Math.random() * 11) + 4);
+    // 0.001 * 11 = 0.012311  = 1 + 4 = 5
+    // 0.999 * 11 = 10.9899 = 11 + 4 = 15
+    console.log(Math.floor(Math.random() * 101) + 100);
+    // 0.001 * 101 = 0.011 = 0 + 100 = 100
+    // 0.999 * 101 = 100.98 = 100 + 100 = 200
+
+    // null and Undefined
+    let thisClass
+    console.log(thisClass);
+
+    let nullVariable = null
+    console.log(typeof nullVariable);
+
+    // Booleans
     
     
+    
+    
+
+
+    
+    
+    
+
+
+
+
+
+
 </script>

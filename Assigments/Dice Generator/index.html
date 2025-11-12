@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Two Dice Generator</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100vh;
+        background: #f5f5f5;
+    }
+
+    .dice-box {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 15px;
+    }
+
+    .dice {
+        font-size: 50px;
+        width: 80px;
+        height: 80px;
+        border: 2px solid #000;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+        transition: transform 0.15s ease;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 18px;
+    }
+
+    #total {
+        margin-top: 15px;
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    /* Rolling animation */
+    @keyframes roll {
+        0%   { transform: rotate(0deg) scale(1); }
+        25%  { transform: rotate(90deg) scale(0.95); }
+        50%  { transform: rotate(180deg) scale(1); }
+        75%  { transform: rotate(270deg) scale(0.95); }
+        100% { transform: rotate(360deg) scale(1); }
+    }
+
+    .dice.rolling {
+        animation: roll 0.4s linear infinite;
+    }
+
+    button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+</style>
+</head>
+<body>
+
+<div class="dice-box">
+    <div id="dice1" class="dice">1</div>
+    <div id="dice2" class="dice">1</div>
+</div>
+
+<button id="rollBtn" onclick="rollDice()">Roll Dice</button>
+
+<div id="total">Total: 2</div>
+
+<script>
+function rollDice() {
+    const dice1El = document.getElementById("dice1");
+    const dice2El = document.getElementById("dice2");
+    const totalEl = document.getElementById("total");
+    const btn = document.getElementById("rollBtn");
+
+    // Disable button during animation
+    btn.disabled = true;
+
+    // Add rolling animation classes
+    dice1El.classList.add("rolling");
+    dice2El.classList.add("rolling");
+
+    // Rapidly change faces to simulate rolling
+    const flicker = setInterval(() => {
+        dice1El.textContent = Math.floor(Math.random() * 6) + 1;
+        dice2El.textContent = Math.floor(Math.random() * 6) + 1;
+    }, 100);
+
+    // After 3 seconds, stop animation and show final result
+    setTimeout(() => {
+        clearInterval(flicker);
+        const d1 = Math.floor(Math.random() * 6) + 1;
+        const d2 = Math.floor(Math.random() * 6) + 1;
+        dice1El.textContent = d1;
+        dice2El.textContent = d2;
+        totalEl.textContent = "Total: " + (d1 + d2);
+
+        dice1El.classList.remove("rolling");
+        dice2El.classList.remove("rolling");
+        btn.disabled = false;
+    }, 3000);
+}
+</script>
+
+</body>
+</html>

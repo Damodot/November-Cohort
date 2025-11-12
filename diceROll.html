@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100dvw;
+            height: 100dvh;
+        }
+        #dice1, #dice2 {
+            width: 80px;
+            aspect-ratio: 1 / 1;
+            border: 1px solid rgb(180,180,180);
+            margin-block: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="w-25 m-auto shadow rounded p-4">
+        <h3 class="mb-4 text-center fw-bolder">Random Dice Generator</h3>
+        <div class="d-flex align-items-center w-100 justify-content-center">
+            <div id="dice1" class="rounded d-flex justify-content-center align-items-center"></div>
+            <div id="dice2" class="ms-4 rounded d-flex justify-content-center align-items-center"></div>
+        </div>
+        <button onclick="rollDice()" class="btn btn-success py-2 mt-4 w-100">Roll Dice</button>
+        <h3 class="text-center pt-4 fw-bolder" id="total">Total: </h3>
+    </main>
+    
+</body>
+</html>
+<script>
+    function rollDice() {
+        const dice1 = document.getElementById('dice1')
+        const dice2 = document.getElementById('dice2')
+        const total = document.getElementById('total')
+
+        let rand1 = Math.ceil(Math.random() * 6)
+        let rand2 = Math.ceil(Math.random() * 6)
+        console.log(rand1);
+        console.log(dice1);
+        console.log(dice2);
+        
+        dice1.innerHTML = `<h3>${rand1}</h3>`
+        dice2.innerHTML = `<h3>${rand2}</h3>`
+        total.innerHTML = `Total: ${rand1 + rand2}`    
+    }
+</script>
