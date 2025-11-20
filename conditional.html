@@ -70,18 +70,35 @@
         console.log('Invalid input');
     }
     function checkGrade() {
-        const classGrade =document.getElementById('classGrade')
+        const classGrade = document.getElementById('classGrade')
         console.log(+classGrade.value.trim());
         if (classGrade.value.trim() === '') {
             console.log('Invalid input');
         } else if (isNaN(+classGrade.value.trim())) {
             console.log('Please input a number');
-        } 
-     
-    }
-    console.log(+'100'); 
-    console.log(+'hello');
-    
+        }
 
-    
+    }
+    console.log(+'100');
+    console.log(+'hello');
+
+
+    // Teary Operator
+    let thisClass = "Javascript"
+
+    if (thisClass === 'Javascript') {
+        console.log('This is Javascript Class');
+    } else {
+        console.log('This is ot Javascript Class');
+    }
+
+    thisClass === 'javascript' ?
+        console.log('This is Javascript Class') :
+        console.log('This is ot Javascript Class')
+
+        
+    let thisCourse = thisClass === 'Javascript' ? 'Web Dev' : 'Graphics'
+
+
+
 </script>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    let std1 = 'Mart'
+    let std2 = 'Ekke'
+
+    let js = new Array()
+    console.log(js);
+    let arr = []
+    console.log(arr);
+
+    let arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9] // array of numbers
+    console.log(arr1[0]);
+
+    let arr2 = ['Ibrahim', 'Martin', 'David', 'Tolu', 'Timi', 'Ekkenne'] // array oof strings
+    console.log(arr2[0]);
+
+    let arrOfArr = [[1, 2, 3], [4, 5, 6]] // array of array
+    console.log(arrOfArr[0][2]);
+
+    let arrOfArrs = [[1], [[2, ['Timi']]]]
+    console.log(arrOfArrs[1][0][1][0]);
+
+    let arr3 = [1, 2, 3]
+    let arr4 = [1, 2, 3]
+    console.log(arr3 === arr4);
+
+    // let arrOfArrss = [[true], [false, [false, [[true, [['Ibrahim']]]]]]]
+    // console.log(arrOfArrss[1][1][1][0][1][0][0]);
+    // console.log(arrOfArrss);
+
+    // Array Methods
+    let lastClass = 'Javascript is great'
+    // split
+    console.log(lastClass.split(' ').join(' '));
+    // length
+    console.log(lastClass.length);
+    // Acessing Characters olength a particular Ilengthdex
+    console.log(lastClass[0]);
+    // Accessing The last character in a string
+    console.log(lastClass[lastClass.length - 1]);
+    // Includes
+    console.log(lastClass.includes('Java'));
+    // slice
+    console.log(lastClass.slice(0, 4));
+    console.log(lastClass.slice(4));
+    let arr5 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    //join
+    console.log(eval(arr5.join('+')));
+    // Eval
+    console.log(eval('2*3*5+6'));
+    // length
+    console.log(arr5.length);
+    // Accessing The last character in an array
+    console.log(arr5[arr5.length - 1]);
+    //slice
+    console.log(arr5.slice(0, 4));
+    console.log(arr5.slice(3));
+    // Includes
+    console.log(arr5.includes(3));
+    let arr6 = ['Ibrahim', 'Martin', 'David', 'Tolu', 'Timi', 'Ekkenne'] // array oof strings
+    console.log(arr6.includes('Ibrahim'));
+
+    // Array Modify
+    // Changing Values with their index number
+    let lastArr = [1, 2, 3, 4, 5]
+    lastArr[1] = 20
+    console.log(lastArr);
+
+    let stringArray = ['Ibrahim', 'Dayo', 'David', 'Mart']
+    stringArray[3] = 'Martin'
+    console.log(stringArray);
+
+    // push to add an element to the back of an array
+    let emptArr = []
+    emptArr.push(2, 1)
+    console.log(emptArr);
+
+    // let empArr = []
+    // empArr.push(ip.val)
+    // empArr.push('-')
+    // [12, '-', 23]
+    // '12-23'
+    let thisClass = 'Javascript'
+    console.log(thisClass[0]);
+
+    // pop to remove element at the back of an array
+    let popArr = [1, 2, 3, 4, 5]
+    popArr.pop()
+    console.log(popArr);
+
+    // unshift to add an element to the front of an array
+    let unshEx = [2, 3, 4, 5, 6]
+    unshEx.unshift(0, 1)
+    console.log(unshEx);
+
+    // shift
+    let shiftEx = [0, 1, 2, 3, 4, 5, 6, 7]
+    shiftEx.shift()
+    console.log(shiftEx);
+
+    // sort
+    let sortArray = ['Ibrahim', 'Dayo', 'David', 'Mart']
+    sortArray.sort()
+    console.log(sortArray);
+    sortArray.reverse()
+    console.log(sortArray);
+
+
+    let numSort = [8, 9, 4, 6, 3, 2, 1, 6, 8, 9, 4, 10, 11, 23, 24]
+    numSort.sort((a, b) => a - b)
+    console.log(numSort);
+
+    // reverse
+    numSort.reverse()
+    console.log(numSort);
+
+    // splice
+    let spliceEx = [1, 3, 2, 4, 5, 6, 3, 5, 8]
+    spliceEx.splice(3, 3)
+    console.log(spliceEx);
+    
+
+    // ['Ibrahim', 'Martin']
+
+
+
+
+
+
+</script>
