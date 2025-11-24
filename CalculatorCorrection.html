@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="inp1">
+    <button onclick="addMe()">+</button>
+    <button onclick="subMe()">-</button>
+    <button onclick="multMe()">*</button>
+    <button onclick="divMe()">/</button>
+    <button onclick="totMe()">=</button>
+
+</body>
+
+</html>
+<script>
+    let item = []
+    function totMe() {
+        item.push(inp1.value.trim())
+        console.log(item);
+        inp1.value = ''
+
+        console.log(item.join(''));
+
+        inp1.value = eval(item.join(''))
+        item = []
+    }
+
+    function addMe() {
+        const inp1 = document.getElementById('inp1')
+        // inp1  = 12
+        if (!inp1.value.trim()) {
+            alert("all field is mandatory")
+        } else if (isNaN(+inp1.value.trim())) {
+            alert('Please input a number')
+        } else {
+            item.push(inp1.value.trim(), '+')
+            console.log(item);
+            inp1.value = ""
+        }
+    }
+
+    console.log(isNaN(+'12'));
+    console.log(isNaN(+'hello'));
+
+
+</script>
