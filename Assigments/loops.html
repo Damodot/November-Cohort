@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="printName">
+
+    </div>
+</body>
+
+
+</html>
+<script>
+    let arr = ['Ibrahim', 'Ekenne', 'Martin']
+    // printName.innerHTML += `<h1>${arr[0]}</h1>` 
+    // printName.innerHTML += `<h1>${arr[1]}</h1>` 
+    // printName.innerHTML += `<h1>${arr[2]}</h1>`
+
+    let printName = document.getElementById('printName')
+    for (let i = 0; i < arr.length; i++) {
+        printName.innerHTML += `<h1>${arr[i]}</h1>`
+    }
+
+    for (let index = 0; index < 5; index++) {
+        console.log(index);
+    }
+
+    for (let int = 1; int < 6; int++) {
+        console.log(`${int} * ${int} = ${int * int}`);
+    }
+
+
+    // 2 * 1 = 2
+    // 2 * 2 = 4
+    // 2 * 3 = 6
+    // 2 * 4 = 8
+    // 2 * 5 = 10 ...
+
+    for (let i = 1; i <= 12; i++) {
+        console.log(`2 * ${i} = ${2 * i}`);
+        printName.innerHTML += `<h3>2 * ${i} = ${2 * i}</h3>`
+    }
+
+    let numArr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+    let sum = 0
+    for (let i = 0; i < numArr.length; i++) {
+        // const element = numArr[i];
+        // console.log(numArr[i]);
+        // sum = 0 + 1 = 1
+        // sum = 1 + 2 = 3
+        // sum = 3 + 3 = 6
+        sum = sum + numArr[i]
+    }
+    console.log(sum);
+
+    // #
+    // ##
+    // ###
+    // ####
+    // #####
+
+    let hash = ''
+    for (let i = 0; i < 5; i++) {
+        hash += '#'
+        console.log(hash);
+    }
+
+    // # 
+    // hash =  "#" + "#" = "##"
+
+    // let newHash = '#'
+    // console.log(newHash);
+    // newHash = newHash + '#'
+    // console.log(newHash);
+    // newHash = newHash + '#'
+    // console.log(newHash);
+    // newHash = newHash + '#'
+    // console.log(newHash);
+    // newHash = newHash + '#'
+    // console.log(newHash);
+
+
+
+</script>
