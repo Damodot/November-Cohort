@@ -11,11 +11,25 @@
     <div id="printName">
 
     </div>
+    <input type="text" id="inputUser">
+    <button onclick="addUser()">Add User</button>
+    <div id="showUser"></div>
 </body>
 
 
 </html>
 <script>
+    let nameArr = []
+    function addUser() {
+        nameArr.push(inputUser.value.trim())
+        console.log(nameArr);
+        showUser.innerHTML = ''
+        for (let index = 0; index < nameArr.length; index++) {
+            const element = nameArr[index];
+            showUser.innerHTML += `<p>${element}</p>`
+        }
+    }
+
     let arr = ['Ibrahim', 'Ekenne', 'Martin']
     // printName.innerHTML += `<h1>${arr[0]}</h1>` 
     // printName.innerHTML += `<h1>${arr[1]}</h1>` 
@@ -46,19 +60,6 @@
         printName.innerHTML += `<h3>2 * ${i} = ${2 * i}</h3>`
     }
 
-    let numArr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-    let sum = 0
-    for (let i = 0; i < numArr.length; i++) {
-        // const element = numArr[i];
-        // console.log(numArr[i]);
-        // sum = 0 + 1 = 1
-        // sum = 1 + 2 = 3
-        // sum = 3 + 3 = 6
-        sum = sum + numArr[i]
-    }
-    console.log(sum);
-
     // #
     // ##
     // ###
@@ -85,6 +86,72 @@
     // newHash = newHash + '#'
     // console.log(newHash);
 
+    let numArr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
+    let sum = 0
+    for (let i = 0; i < numArr.length; i++) {
+        const element = numArr[i];
+        // console.log(numArr[i]);
+        // sum = 0 + 1 = 1
+        // sum = 1 + 2 = 3
+        // sum = 3 + 3 = 6
+        sum += element
+    }
+    console.log(sum);
+
+    let newArr = [1, 2, 3, 4, 5, 6]
+    for (const element of newArr) {
+        console.log(element);
+    }
+
+
+    for (let int = 10; int >= 0; int--) {
+        console.log(int);
+    }
+
+    let int = 10
+    while (int < 5) {
+        console.log(int);
+        int++
+    }
+
+    let ind = 10
+    do {
+        console.log(ind);
+        ind++
+    } while (ind < 5);
+
+    // break Continue
+    // break to stop the loop entirely
+    for (let i = 0; i < 10; i++) {
+        if (i === 5) {
+            break
+        }
+        console.log(i);
+    }
+
+    let classArr = ['Martin', 'Ekene', 'Dayo', 'Ibrahim', 'Timi', 'Tolu', 'Victor']
+
+    let foundUser
+    for (let index = 0; index < classArr.length; index++) {
+        const element = classArr[index];
+        if (element === 'Dotun') {
+            foundUser = element
+            break
+        }
+    }
+    if (foundUser) {
+        console.log(foundUser);
+    } else {
+        console.log('User Not found');
+    }
+
+    // Continue to skip an iteration
+    for (let index = 0; index < 8; index++) {
+        if (index === 3) {
+            continue
+        }
+        console.log(index);
+    }
 
 </script>
