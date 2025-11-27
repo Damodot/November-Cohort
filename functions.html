@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="findUser(nameList)">Click Me</button>
+    <button onclick="findUser(nameList2)">Click Me</button>
+</body>
+
+</html>
+<script>
+    // Global, Function, Block Scope
+    let newArr = [1, 2, 3, 4, 5, 6]
+
+
+
+    function loopArr() {
+        let arr = [2, 3, 4, 5, 6, 7, 8]
+        for (let index = 0; index < newArr.length; index++) {
+            const element = newArr[index];
+            console.log(element);
+        }
+    }
+
+    loopArr()
+
+    // console.log(arr);
+
+    // Function Scope can lock all variables created with any key word
+    // Any variable inside a funnction scope is not accessible outside the function scope
+    function isComingToClass() {
+        let name = 'Javascript'
+        var newName = 'React'
+        const nextName = 'Electron'
+        function sayClass() {
+            console.log(`I am a ${name} Student`);
+        }
+        sayClass()
+    }
+    isComingToClass()
+
+    // Block scope can lock variables created with let and const alone but not var
+    for (let index = 0; index < newArr.length; index++) {
+        var element = 112
+    }
+    console.log(element);
+
+    // functions with parameter
+    function sayName(params) {
+        console.log(`Welcome ${params}`);
+    }
+
+    sayName('Dotun')
+    sayName('Ibrahim')
+    sayName('Martin')
+
+
+    let lateArr = [3, 4, 2, 2, 1, 1, 3, 4, 5, 5, 5]
+    let lateArr1 = [3, 4, 2, 2, 1, 1, 3, 4, 5, 5, 5, 6, 3, 2, 2, 2, 4]
+    let lateArr2 = [3, 4, 2, 2, 1, 1, 3, 4, 5]
+    function addNum(params) {
+        let sum = 0
+        for (let index = 0; index < params.length; index++) {
+            const element = params[index];
+            sum += element
+        }
+        console.log(sum);
+    }
+
+    addNum(lateArr)
+    addNum(lateArr1)
+    addNum(lateArr2)
+
+    // functions with two parameters
+    function addNum2(num1, num2) {
+        console.log(num1 + num2);
+    }
+
+    addNum2(34, 78)
+
+    // Functions with a default parameter
+    function noName(userName = 'User') {
+        console.log(`Welcome ${userName}`);
+    }
+    noName('Ade')
+
+    // Functions Returnig value
+    function returnVal() {
+        return 35
+        console.log('Hello');
+    }
+
+    console.log(returnVal());
+
+
+    let userName = 'jbfjhs'
+    let email = 'bhgs'
+    let password = 'khjl.v mb m .'
+
+    function login() {
+        if (!userName || !email || !password) {
+            alert('All fields are mandatory')
+            return
+        }
+
+        if (password.length <= 8) {
+            alert('Password must be greater thann 8 characters')
+            return
+        }
+        alert('Sign Up Succesful')
+    }
+    login()
+
+    let nameList = ['Martin', 'Dayo', 'Ibrahim']
+    let nameList2 = ['Ekene', 'Dotun', 'Timi']
+
+    function findUser(params) {
+        let foundUser
+        for (let index = 0; index < params.length; index++) {
+            const element = params[index];
+            if (element === 'Dotun') {
+                foundUser = element
+                break
+            }
+        }
+        if (foundUser) {
+            alert(`${foundUser} is in the database`)
+        } else {
+            alert('User not found')
+        }
+    }
+</script>
