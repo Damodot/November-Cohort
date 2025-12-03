@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>TO-DO-LIST</h1>
+    <input type="text" id="inp1">
+    <button onclick="addTask()">Add Task</button>
+    <div id="showDiv"></div>
+</body>
+
+</html>
+<script>
+    let db = []
+    const showDiv = document.getElementById('showDiv')
+    function displayTask() {
+        showDiv.innerHTML = ''
+        for (let index = 0; index < db.length; index++) {
+            const element = db[index];
+            showDiv.innerHTML += `
+            <div>
+                <p>${index + 1}. ${element} </p>
+                <button onclick="deleteTask(${index})">Delete</button>
+                <button onclick="editTask(${index})">Edit</button>
+            </div>`
+        }
+    }
+    function addTask() {
+        const inp1 = document.getElementById('inp1')
+        let texts = inp1.value.trim()
+        if (!inp1.value) {
+            alert('input a value')
+            return
+        }
+        db.push(texts)
+        console.log(db);
+        displayTask()
+        inp1.value = ''
+    }
+
+    function deleteTask(params) {
+        let isConfirmed = confirm('Are you sure you want to delete this task?')
+        console.log(isConfirmed);
+        if (isConfirmed) {
+            console.log(params);
+            db.splice(params, 1)
+            console.log(db);
+            displayTask()
+        }
+    }
+
+    function editTask(params) {
+        let promptReturn = prompt('What do you want to edit your task to be?', db[params])
+        if (!promptReturn || promptReturn.toLowerCase().trim() === db[params].toLowerCase()) {
+            alert('Please make a valid change')
+            return
+        }
+        console.log(promptReturn);
+        db.splice(params, 1, promptReturn)
+        console.log(db);
+        displayTask()
+    }
+</script>

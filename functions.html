@@ -114,7 +114,7 @@
         }
         alert('Sign Up Succesful')
     }
-    login()
+    // login()
 
     let nameList = ['Martin', 'Dayo', 'Ibrahim']
     let nameList2 = ['Ekene', 'Dotun', 'Timi']
@@ -134,4 +134,59 @@
             alert('User not found')
         }
     }
+
+    // functions with unlimited number of arguments
+
+    function unlimitedNum() {
+        console.log(arguments);
+        let copyArr = Array.from(arguments)
+        console.log(copyArr);
+        console.log(copyArr.join(''));
+    }
+
+    unlimitedNum(1, 2, 4, 3, 5, 6, 6, 4, 4, 5, 6, 6, 5, 4, 7)
+
+
+    // Types of Functions
+    // Function Declaration
+    function funcDeclare() {
+        console.log('This is a function declaration');
+    }
+    funcDeclare()
+
+    // Anonymous Function & Function Expression
+    let expressFunc = function () {
+        console.log('This is a function Expression');
+    }
+    expressFunc()
+
+    // Arrow Function
+    let arrowFunc = () => {
+        console.log('This is an arrow Funtion');
+    }
+    arrowFunc()
+
+        // Self Invoked Function Expression (SIFE) || Immediately Invoked Function Expression (IIFE)
+        ; (function () {
+            console.log('This is a self invoked function expression');
+        })()
+
+    // Callback Function
+    function callCustomer() {
+        console.log('Calling Customer...');
+    }
+
+    function orderFood(params) {
+        params()
+    }
+
+    function tellCustomerAboutDiscount(params) {
+        params()
+    }
+    tellCustomerAboutDiscount(() => {
+        console.log('Calling Customer');
+    })
+    orderFood(() => {
+        console.log('Calling Customer');
+    })
 </script>

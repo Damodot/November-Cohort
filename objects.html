@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        table, tr, td, thead, tbody, th {
+            border: 0.5px solid grey;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="w-50 m-auto p-4 rounded shadow">
+        <h1 class="text-center">Sign Up Page</h1>
+        <input type="text" placeholder="Enter your First name" id="firstName" class="form-control my-3">
+        <input type="text" placeholder="Enter your Last name" id="lastName" class="form-control my-3">
+        <input type="email" placeholder="Enter your email" id="email" class="form-control my-3">
+        <input type="text" placeholder="Enter your Password" id="password" class="form-control my-3">
+        <input type="text" placeholder="Confirm your Password" id="confPassword" class="form-control my-3">
+        <button class="btn btn-success py-2 w-100" onclick="signUp()">Sign up</button>
+        <div id="showTable">
+            <table class="w-100 mt-4">
+                <thead>
+                    <tr>
+                        <th>S/N</th>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                    
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <!-- <div id="showSkills"></div> -->
+</body>
+
+</html>
+<script>
+    let db = []
+    function signUp() {
+        let firstName = document.getElementById('firstName')
+        let lastName = document.getElementById('lastName')
+        let email = document.getElementById('email')
+        let password = document.getElementById('password')
+        let confPassword = document.getElementById('confPassword')
+        let tbody = document.getElementById('tbody')
+
+        console.log(firstName.value.trim(), lastName.value.trim(), email.value.trim(), password.value.trim());
+        if (!firstName.value.trim() || !lastName.value.trim() || !email.value.trim() || !password.value.trim() || !confPassword.value.trim()) {
+            alert('All fields are mandatory')
+            return
+        }
+        if (password.value.trim().length < 6) {
+            alert('Password must be greater than 6 characters')
+            return
+        }
+        if (password.value.trim() !== confPassword.value.trim()) {
+            alert('Password must be equal to confirm password')
+            return
+        }
+        let userObj = {
+            firstName: firstName.value.trim(),
+            lastName: lastName.value.trim(),
+            email: email.value.trim(),
+            password: password.value.trim(),
+            getUserFullname: function () {
+                return `${this.firstName} ${this.lastName}`
+            }
+        }
+        console.log(userObj);
+        db.push(userObj)
+        console.log(db);
+        tbody.innerHTML = ''
+        for (let index = 0; index < db.length; index++) {
+            const element = db[index];
+            tbody.innerHTML += `
+                <tr>
+                    <td>${index + 1}</td>
+                    <td>${element.getUserFullname()}</td>
+                    <td>${element.email}</td>
+                </tr>
+            `
+        }
+        
+        firstName.value = ''
+        lastName.value = ''
+        email.value = ''
+        password.value = ''
+        confPassword.value = ''
+    }
+    let arr = ['Dayo', 'Javascript', '30', 'Christian', 'Ekene', 'Javascript', '30', 'Chrsitian']
+    // Objects
+    let user = {
+        name: 'Dayo',
+        currentClass: 'Javascript',
+        age: 30,
+        skills: ['HTML', 'CSS', 'JS', 'React'],
+        getUserInfo: function () {
+            return `This users name is ${this.name}, and he has these skills, ${this.skills.slice(0, this.skills.length - 1).join(', ')} and ${this.skills[this.skills.length - 1]}`
+        },
+        '1xbet': true
+    }
+
+    user.name = 'Adedayo'
+    user.currentClass = 'React'
+    user.isMarried = true
+    console.log(user);
+    console.log(user['1xbet']);
+    console.log(user.name);
+    console.log(user['name']);
+    console.log(user.currentClass);
+    console.log(user.skills[3]);
+    console.log(user.getUserInfo());
+
+    user.getOtherUserInfo = function () {
+        return `${this.name} is ${this.isMarried ? 'married' : 'not married'} and he is ${this.age} years old`
+    }
+
+    console.log(user.getOtherUserInfo());
+
+
+
+    // for (let index = 0; index < user.skills.length; index++) {
+    //     const element = user.skills[index];
+    //     showSkills.innerHTML += `<h3>${element}</h3>`
+    // }
+
+
+    let myString = 'NewName'
+    myString.slice()
+</script>
